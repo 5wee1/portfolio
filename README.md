@@ -1,6 +1,6 @@
-# 5weel — Portfolio
+# Daniil Ionov (5wee1) — Portfolio
 
-Статическая витрина с проектами. Доступна через GitHub Pages.
+Статическая витрина с проектами. Доступна через GitHub Pages - https://5wee1.github.io/portfolio
 
 ## Проекты
 - **CRM: Partners & Orders** (PySide6 + SQLAlchemy) → https://github.com/5wee1/crm-partners-orders
