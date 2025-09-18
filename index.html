@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ru" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Портфолио</title>
+  <meta name="description" content="Портфолио проектов: CRM, Kanban, Log Analytics">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui'] },
+          colors: {
+            brand: {
+              50:  '#eef2ff', 100: '#e0e7ff', 200: '#c7d2fe', 300: '#a5b4fc',
+              400: '#818cf8', 500: '#6366f1', 600: '#7c3aed', 700: '#db2777'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .bg-soft {
+      background-image:
+        radial-gradient(60rem 60rem at -10% -10%, rgba(124,58,237,0.06), transparent 50%),
+        radial-gradient(60rem 60rem at 110% 10%, rgba(99,102,241,0.08), transparent 40%),
+        linear-gradient(180deg, #ffffff, #f8fafc);
+    }
+    .grid-overlay { background-image: url('assets/grid.svg'); background-size: 36px 36px; opacity: .25; }
+    .card { backdrop-filter: saturate(120%) blur(6px); }
+    .focus-ring:focus-visible { outline: 3px solid rgba(99,102,241,.55); outline-offset: 2px; }
+  </style>
+  <script>
+    function setTheme(dark) {
+      const r = document.documentElement;
+      if (dark) r.classList.add('dark'); else r.classList.remove('dark');
+      localStorage.setItem('theme', dark ? 'dark' : 'light');
+    }
+    const saved = localStorage.getItem('theme');
+    if (saved === 'dark') document.documentElement.classList.add('dark');
+  </script>
+</head>
+<body class="bg-gradient-to-r from-brand-600 to-brand-500 dark:bg-gray-950 text-white dark:text-gray-100 min-h-screen">
+  <div class="grid-overlay fixed inset-0 pointer-events-none"></div>
+
+  <header class="max-w-6xl mx-auto px-4 pt-10 pb-6 flex items-center justify-between">
+    <div>
+      <h1 class="text-3xl md:text-4xl font-bold tracking-tight">
+        <span class="text-gray-200 dark:text-gray-300">Даниил Ионов - портфолио</span>
+      </h1>
+      <p class="mt-2 text-white/80 dark:text-white-400 max-w-2xl">собрал здесь несколько проектов: десктопная CRM, веб‑канбан, аналитика логов.</p>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 pb-16">
+    <section class="grid md:grid-cols-3 gap-6">
+      <a href="https://github.com/5wee1/crm-partners-orders" target="_blank" class="card group block rounded-2xl p-4 bg-white/80 dark:bg-gray-900/60 border border-indigo-200/60 dark:border-white/10 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition focus-ring">
+        <div class="relative">
+          <img src="assets/crm.png" alt="CRM screenshot" class="rounded-xl w-full aspect-video object-cover bg-brand-50/70 dark:bg-gray-800">
+          <div class="absolute inset-0 rounded-xl ring-1 ring-inset ring-black/5"></div>
+        </div>
+        <h2 class="mt-4 text-xl font-semibold">CRM: Partners &amp; Orders</h2>
+        <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">PySide6 + SQLAlchemy, импорт Excel, расчёт скидок. PostgreSQL/SQLite.</p>
+        <div class="mt-3 flex items-center gap-2 text-xs">
+          <span class="inline-flex items-center gap-1 rounded-full px-2 py-1 bg-brand-100 text-brand-600 dark:bg-brand-600/20 dark:text-brand-300">Python</span>
+          <span class="inline-flex items-center gap-1 rounded-full px-2 py-1 bg-emerald-100 text-emerald-700 dark:bg-emerald-600/20 dark:text-emerald-300">Desktop</span>
+        </div>
+      </a>
+
+      <a href="https://github.com/5wee1/task-manager-kanban-php" target="_blank" class="card group block rounded-2xl p-4 bg-white/80 dark:bg-gray-900/60 border border-fuchsia-200/60 dark:border-white/10 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition focus-ring">
+        <div class="relative">
+          <img src="assets/kanban.png" alt="Kanban screenshot" class="rounded-xl w-full aspect-video object-cover bg-brand-50/70 dark:bg-gray-800">
+          <div class="absolute inset-0 rounded-xl ring-1 ring-inset ring-black/5"></div>
+        </div>
+        <h2 class="mt-4 text-xl font-semibold">Task Manager Kanban</h2>
+        <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">PHP + MySQL + JS, drag&amp;drop, AJAX, простая схема БД.</p>
+        <div class="mt-3 flex items-center gap-2 text-xs">
+          <span class="inline-flex items-center gap-1 rounded-full px-2 py-1 bg-fuchsia-100 text-fuchsia-700 dark:bg-fuchsia-600/20 dark:text-fuchsia-300">PHP</span>
+          <span class="inline-flex items-center gap-1 rounded-full px-2 py-1 bg-sky-100 text-sky-700 dark:bg-sky-600/20 dark:text-sky-300">Web</span>
+        </div>
+      </a>
+
+      <a href="https://github.com/5wee1/log-analytics" target="_blank" class="card group block rounded-2xl p-4 bg-white/80 dark:bg-gray-900/60 border border-emerald-200/60 dark:border-white/10 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition focus-ring">
+        <div class="relative">
+          <img src="assets/logs.png" alt="Log analytics screenshot" class="rounded-xl w-full aspect-video object-cover bg-brand-50/70 dark:bg-gray-800">
+          <div class="absolute inset-0 rounded-xl ring-1 ring-inset ring-black/5"></div>
+        </div>
+        <h2 class="mt-4 text-xl font-semibold">Log Analytics</h2>
+        <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">Нормализация JSON→JSONL, аномалии, IP↔host, подозрительные пользователи.</p>
+        <div class="mt-3 flex items-center gap-2 text-xs">
+          <span class="inline-flex items-center gap-1 rounded-full px-2 py-1 bg-emerald-100 text-emerald-700 dark:bg-emerald-600/20 dark:text-emerald-300">Python</span>
+          <span class="inline-flex items-center gap-1 rounded-full px-2 py-1 bg-indigo-100 text-indigo-700 dark:bg-indigo-600/20 dark:text-indigo-300">Data</span>
+        </div>
+      </a>
+    </section>
+  </main>
+
+  <footer class="max-w-6xl mx-auto px-4 pb-10 text-sm text-gray-500 dark:text-gray-400">
+    Обновлено 2025-09-18 · <a href="https://github.com/5wee1" target="_blank" class="underline">@5wee1</a>
+  </footer>
+</body>
+</html>
